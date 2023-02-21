@@ -40,7 +40,7 @@ namespace WebAppMacroSociety.Controllers
             int ResultPost = 0;
             _context.FriendLists.Add(friendlist);
             ResultPost = _context.SaveChanges();
-            _context.FriendLists.Add(new FriendList() { Friendname = friendlist.Username, Username = friendlist.Friendname });
+            _context.FriendLists.Add(new FriendList() { Friendname = friendlist.Username, Username = friendlist.Friendname, IdUsername = friendlist.IdFriendname, IdFriendname = friendlist.IdUsername });
             ResultPost += _context.SaveChanges();
             return ResultPost;
         }

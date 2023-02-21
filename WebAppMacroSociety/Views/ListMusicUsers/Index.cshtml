@@ -1,0 +1,197 @@
+﻿@model IEnumerable<WebAppMacroSociety.Models.ListMusicUser>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music14)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music15)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music16)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music17)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music18)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music19)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music20)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music21)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music22)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music23)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music24)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Music25)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserReceivedMusicPrize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUserNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music6)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music7)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music8)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music9)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music13)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music14)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music15)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music16)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music17)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music18)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music19)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music20)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music21)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music22)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music23)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music24)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Music25)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserReceivedMusicPrize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUserNavigation.Email)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

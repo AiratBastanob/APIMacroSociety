@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using WebAppMacroSociety.EmailServies;
 using WebAppMacroSociety.Models;
+using WebAppMacroSociety.Randoms;
 
 namespace WebAppMacroSociety.Controllers
 {
@@ -14,7 +19,10 @@ namespace WebAppMacroSociety.Controllers
     public class UsersController : Controller
     {
         private readonly MacroSocietyContext _context;
-       
+        private CreateVerificationCode createVerificationCode;
+        private EmailService emailService;
+        private int VerificationCode=0;
+
         public UsersController(MacroSocietyContext context)
         {
             _context = context;
@@ -34,7 +42,17 @@ namespace WebAppMacroSociety.Controllers
             IEnumerable<User> UsersList;
             UsersList = _context.Users.Where(user => user.Name != myname);
             return UsersList;
-        }        
+        }
+        [HttpGet("checkemail")]
+        public async Task<int> GetEmailandCheck(string email)
+        {
+            emailService = new EmailService();
+            createVerificationCode = new CreateVerificationCode();
+            VerificationCode = createVerificationCode.RandomInt(6);
+            string bodyMessage = @"Проверочный код: " + VerificationCode.ToString();
+            await emailService.SendEmailAsync(email, "Шайтан-машина", bodyMessage);
+            return VerificationCode;
+        }
         [HttpPost]
         public int CreateNewUser(User user)
         {

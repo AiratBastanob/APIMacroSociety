@@ -53,6 +53,15 @@ namespace WebAppMacroSociety.Controllers
             await emailService.SendEmailAsync(email, "Шайтан-машина", bodyMessage);
             return VerificationCode;
         }
+        [HttpGet("sendcomment")]
+        public async Task<int> GetCommentandSend(string infoUser, string comment)
+        {
+            emailService = new EmailService();
+            createVerificationCode = new CreateVerificationCode();           
+            string bodyMessage = @"Текст пользователя: " + comment;
+            await emailService.SendEmailAsync("ajratbastanov@gmail.com", infoUser, bodyMessage);
+            return 1;
+        }
         [HttpPost]
         public int CreateNewUser(User user)
         {
